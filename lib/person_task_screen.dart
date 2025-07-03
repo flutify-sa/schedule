@@ -64,9 +64,9 @@ class PersonTasksScreenState extends State<PersonTasksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(foregroundColor: Colors.white,
         title: Text('${person.fullName} - Tasks'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple,
       ),
       body: person.tasks.isEmpty
           ? Center(
