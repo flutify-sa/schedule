@@ -66,10 +66,10 @@ class HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.blue.shade50,
       appBar: AppBar(foregroundColor: Colors.white,
         title: Text('Schedule Manager'),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple.shade900,
       ),
       body: people.isEmpty
           ? Center(

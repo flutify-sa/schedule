@@ -66,7 +66,7 @@ class PersonTasksScreenState extends State<PersonTasksScreen> {
     return Scaffold(
       appBar: AppBar(foregroundColor: Colors.white,
         title: Text('${person.fullName} - Tasks'),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple.shade900,
       ),
       body: person.tasks.isEmpty
           ? Center(
