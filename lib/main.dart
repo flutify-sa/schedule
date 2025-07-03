@@ -10,7 +10,7 @@ class ScheduleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       title: 'Schedule Manager',
       theme: ThemeData(
         fontFamily: 'Flutify',
