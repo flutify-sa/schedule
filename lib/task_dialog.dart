@@ -86,11 +86,11 @@ class TaskDialogState extends State<TaskDialog> with SingleTickerProviderStateMi
                       filled: true,
                       fillColor: colorScheme.primary.withAlpha((0.05 * 255).round()),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none,
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: colorScheme.primary, width: 2),
                       ),
                       errorStyle: const TextStyle(height: 0.7),
@@ -146,7 +146,7 @@ class TaskDialogState extends State<TaskDialog> with SingleTickerProviderStateMi
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       decoration: BoxDecoration(
                         color: colorScheme.primary.withAlpha((0.1 * 255).round()),
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
                         'Duration: ${endTime.difference(startTime).inHours}h '
@@ -166,14 +166,17 @@ class TaskDialogState extends State<TaskDialog> with SingleTickerProviderStateMi
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        style: TextButton.styleFrom(
-                          foregroundColor: colorScheme.secondary,
-                          textStyle: const TextStyle(fontWeight: FontWeight.w600),
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                        ),
-                        onPressed: () => Navigator.pop(context),
-                        child: const Text('Cancel'),
-                      ),
+  style: TextButton.styleFrom(
+    foregroundColor: colorScheme.secondary,
+    textStyle: const TextStyle(fontWeight: FontWeight.w600),
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  ),
+  onPressed: () => Navigator.pop(context),
+  child: const Text('Cancel'),
+),
                       const SizedBox(width: 16),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -181,7 +184,7 @@ class TaskDialogState extends State<TaskDialog> with SingleTickerProviderStateMi
                           foregroundColor: colorScheme.onPrimary,
                           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           elevation: 6,
                           shadowColor: colorScheme.primary.withAlpha((0.4 * 255).round()),

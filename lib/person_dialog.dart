@@ -53,7 +53,7 @@ class PersonDialogState extends State<PersonDialog> with SingleTickerProviderSta
       scale: _scaleAnimation,
       child: Dialog(
         backgroundColor: colorScheme.surface,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 12,
         child: Container(
           constraints: const BoxConstraints(maxWidth: 400),
@@ -84,11 +84,11 @@ class PersonDialogState extends State<PersonDialog> with SingleTickerProviderSta
                       filled: true,
                       fillColor: colorScheme.primary.withAlpha((0.05 * 255).round()),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none,
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: colorScheme.primary, width: 2),
                       ),
                       errorStyle: const TextStyle(height: 0.7),
@@ -113,21 +113,21 @@ class PersonDialogState extends State<PersonDialog> with SingleTickerProviderSta
                       filled: true,
                       fillColor: colorScheme.primary.withAlpha((0.05 * 255).round()),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none,
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: colorScheme.primary, width: 2),
                       ),
                       errorStyle: const TextStyle(height: 0.7),
                     ),
-                    validator: (value) {
-                      if (value == null || value.trim().isEmpty) {
-                        return 'Please enter a surname';
-                      }
-                      return null;
-                    },
+                    // validator: (value) {
+                    //   if (value == null || value.trim().isEmpty) {
+                    //     return 'Please enter a surname';
+                    //   }
+                    //   return null;
+                    // },
                     textInputAction: TextInputAction.done,
                     onFieldSubmitted: (_) => _savePerson(),
                   ),
@@ -138,11 +138,14 @@ class PersonDialogState extends State<PersonDialog> with SingleTickerProviderSta
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        style: TextButton.styleFrom(
-                          foregroundColor: colorScheme.secondary,
-                          textStyle: const TextStyle(fontWeight: FontWeight.w600),
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                        ),
+  style: TextButton.styleFrom(
+    foregroundColor: colorScheme.secondary,
+    textStyle: const TextStyle(fontWeight: FontWeight.w600),
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  ),
                         onPressed: () => Navigator.pop(context),
                         child: const Text('Cancel'),
                       ),
@@ -153,7 +156,7 @@ class PersonDialogState extends State<PersonDialog> with SingleTickerProviderSta
                           foregroundColor: colorScheme.onPrimary,
                           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           elevation: 6,
                           shadowColor: colorScheme.primary.withAlpha((0.4 * 255).round()),
